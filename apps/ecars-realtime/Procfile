@@ -1,0 +1,3 @@
+web: node server.js
+sensor-simulator: node sensor-simulator.js
+sensor-persistence: node sensor-persistence.js

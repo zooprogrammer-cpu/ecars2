@@ -1,0 +1,24 @@
+{
+    "name": "ecars-mqtt-broker",
+    "version": "1.0.0",
+    "private": true,
+    "description": "eCars - MQTT Broker over WebSockets",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "scripts": {
+        "lint": "eslint '**/*.{js,ts}'"
+    },
+    "dependencies": {
+        "aedes": "^0.48.1",
+        "mqtt": "^4.3.5",
+        "websocket-stream": "^5.5.2"
+    },
+    "devDependencies": {
+        "eslint": "^8.44.0"
+    },
+    "engines": {
+        "node": ">=10.13.0 <19.0.0",
+        "npm": ">=6.4.1 <9.0.0",
+        "yarn": ">=1.9.4 <3.0.0"
+    }
+}

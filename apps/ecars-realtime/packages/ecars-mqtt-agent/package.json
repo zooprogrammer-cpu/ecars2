@@ -1,0 +1,14 @@
+{
+    "name": "@ecars/mqtt-agent",
+    "version": "1.0.0",
+    "private": true,
+    "description": "eCars - MQTT Utilities",
+    "main": "lib/agent.js",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "dependencies": {
+        "@faker-js/faker": "^7.6.0",
+        "debug": "^4.3.4",
+        "mqtt": "^4.3.7"
+    }
+}

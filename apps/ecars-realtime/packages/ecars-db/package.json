@@ -1,0 +1,16 @@
+{
+    "name": "@ecars/db",
+    "version": "1.0.0",
+    "private": true,
+    "description": "eCars - DB Utilities",
+    "main": "models/index.js",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "dependencies": {
+        "debug": "^4.3.4",
+        "dotenv-cli": "^6.0.0",
+        "pg": "^8.8.0",
+        "sequelize": "^6.25.8",
+        "sequelize-cli": "^6.5.2"
+    }
+}

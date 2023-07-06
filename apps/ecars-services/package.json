@@ -1,0 +1,53 @@
+{
+    "name": "ecars-services",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A web app that creates a PDF showing the customer's selected car configuration and handles WebPush.",
+    "author": "Salesforce Developer Relations",
+    "license": "CC0-1.0",
+    "main": "app.ts",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "compile-schemas": "json2ts -i schemas -o types",
+        "copy-files": "copyfiles './routes/pdf/images/**/*.png' './routes/pdf/images/**/*.jpg' './routes/pdf/fonts/**/*.ttf' dist/",
+        "test": "tap --ts test/**/*.test.ts",
+        "start": "fastify start -a '0.0.0.0' -l info dist/app.js",
+        "build": "npm run compile-schemas && npm run build:ts",
+        "build:ts": "tsc",
+        "postbuild": "npm run copy-files",
+        "dev": "tsc && npm run copy-files && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
+    },
+    "dependencies": {
+        "@fastify/autoload": "^5.5.0",
+        "@fastify/helmet": "^10.1.1",
+        "ajv": "^8.11.2",
+        "copyfiles": "^2.4.1",
+        "dotenv": "^16.0.3",
+        "fastify": "^4.10.2",
+        "fastify-cli": "^5.6.0",
+        "fastify-plugin": "^4.3.0",
+        "jsforce": "^1.11.1",
+        "pdfmake": "^0.2.7",
+        "pg": "^8.8.0",
+        "piscina": "^3.2.0",
+        "web-push": "^3.5.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.16.3",
+        "concurrently": "^7.6.0",
+        "json-schema-to-typescript": "^12.0.0",
+        "tap": "^16.3.7",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
+    },
+    "engines": {
+        "node": ">=10.13.0 <19.0.0",
+        "npm": ">=6.4.1 <9.0.0",
+        "yarn": ">=1.9.4 <3.0.0"
+    },
+    "tap": {
+        "check-coverage": false
+    }
+}
