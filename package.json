@@ -7,7 +7,6 @@
   "license": "CC0-1.0",
   "scripts": {
     "clean": "lerna clean && rimraf node_modules **/node_modules",
-    "lint": "eslint **/{lwc,apps}/**/*.js",
     "test": "npm run lint && npm run test:unit && npm run test:services",
     "test:unit": "lwc-jest --skipApiVersionCheck",
     "test:unit:watch": "lwc-jest --watch --skipApiVersionCheck",
@@ -24,9 +23,6 @@
     "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
       "prettier --write"
     ],
-    "**/{lwc,apps}/**/*.js": [
-      "eslint"
-    ],
     "**/lwc/**": [
       "sfdx-lwc-jest --skipApiVersionCheck -- --bail --findRelatedTests --passWithNoTests"
     ]
@@ -36,18 +32,9 @@
     "url": "git+https://github.com/trailheadapps/ecars.git"
   },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.5.0",
     "@prettier/plugin-xml": "^2.1.0",
     "@sa11y/jest": "^4.0.1",
-    "@salesforce/eslint-config-lwc": "^0.11.0",
-    "@salesforce/eslint-plugin-lightning": "^1.0.0",
     "@salesforce/sfdx-lwc-jest": "^1.1.3",
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "^8.28.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^27.1.5",
     "husky": "^8.0.2",
     "lerna": "^6.0.3",
     "lint-staged": "^13.0.3",
